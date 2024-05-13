@@ -6,7 +6,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: ""
   });
@@ -16,10 +16,21 @@ const SignUp = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform form submission logic here, e.g., send data to backend
-    console.log(formData); // Placeholder for now
+    try {
+      const response = await fetch("http://localhost:4000/user/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log(data); // Assuming the API returns some data upon successful signup
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -28,7 +39,7 @@ const SignUp = () => {
       <br />
       <Button
         component={Link}
-        to="/"
+        to="/login"
         variant="contained"
         color="primary"
       >
@@ -50,10 +61,10 @@ const SignUp = () => {
       >
         <form onSubmit={handleSubmit}>
           <TextField
-            label="Username"
+            label="Name"
             type="text"
-            name="username"
-            value={formData.username}
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             margin="normal"
             variant="outlined"
