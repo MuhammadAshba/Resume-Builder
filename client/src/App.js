@@ -6,6 +6,10 @@ import Resume from "./components/Resume";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+<<<<<<< Updated upstream
+=======
+// import Profile from "./components/Profile"
+>>>>>>> Stashed changes
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

@@ -90,6 +90,7 @@ class Profile extends Component {
     const { classes } = this.props;
 
     return (
+<<<<<<< Updated upstream
       <Paper className={classes.padding}>
         <Card>
           <CardHeader title="Personal Details" />
@@ -158,12 +159,87 @@ class Profile extends Component {
                       </InputAdornment>
                     ),
                   }}
+=======
+
+
+      <Paper className={classes.padding}>
+        <Card>
+          <CardHeader title="Personal Details" />
+        </Card>
+        <CardContent>
+          <div className={classes.margin}>
+            <Grid container spacing={2} alignItems="center" lg={12}>
+              <Grid item md={6} sm={12} xs={12} lg={6}>
+                <TextField
+                  margin="dense"
+                  variant="outlined"
+                  name="firstname"
+                  label="First Name"
+                  style={{ width: "80%" }}
+                  required={true}
+                  value={values.firstname}
+                  onChange={this.props.handleChange}
+                />
+              </Grid>
+              <Grid item md={6} sm={12} xs={12} lg={6}>
+                <TextField
+                  margin="dense"
+                  label="Last Name"
+                  variant="outlined"
+                  style={{ width: "80%" }}
+                  name="lastname"
+                  required
+                  value={values.lastname}
+                  onChange={this.props.handleChange}
+>>>>>>> Stashed changes
                 />
               </Grid>
 
               <Grid item md={6} sm={12} xs={12} lg={6}>
                 <TextField
                   margin="dense"
+<<<<<<< Updated upstream
+=======
+                  label="Email"
+                  variant="outlined"
+                  name="email"
+                  required
+                  style={{ alignItems: "left", width: "80%" }}
+                  value={values.email}
+                  onChange={this.props.handleChange}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <EmailIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+
+              <Grid item lg={6} xs={12} sm={12} md={6}>
+                <TextField
+                  margin="dense"
+                  label="Phone Number"
+                  variant="outlined"
+                  name="phone"
+                  style={{ alignItems: "left", width: "80%" }}
+                  value={values.phone}
+                  onChange={this.props.handleChange}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <PhoneIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Grid>
+
+              <Grid item md={6} sm={12} xs={12} lg={6}>
+                <TextField
+                  margin="dense"
+>>>>>>> Stashed changes
                   label="Your Website"
                   variant="outlined"
                   name="website"
